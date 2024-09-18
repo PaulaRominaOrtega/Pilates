@@ -1,0 +1,98 @@
+body {
+    font-family: "Poppins", sans-serif; 
+    background-color: #d2d4d5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #d2d4d5;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #007bff;
+}
+h2 {
+    color: #007bff;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    align-items: stretch; /* Esto asegura que los artículos tengan la misma altura */
+}
+
+article {
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
+    background-color: #e6eef6;
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Para que los elementos internos se distribuyan */
+}
+img {
+    width: 100%;
+    height: 100%; /* Ahora la imagen ocupará toda la altura del contenedor */
+    max-height: 400px; /* Limita la altura máxima */
+    object-fit: cover; /* Recorta proporcionalmente la imagen */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05); /* Efecto de hover */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* incluye el ancho en el borde total */
+    position: relative; /*para que respete el flujo de la pagina */
+    left: 0;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Media Queries */
+@media (max-width: 599px) {
+    article {
+        flex: 1 1 100%; /* Una columna en pantallas pequeñas menores a 600px*/
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    article {
+        flex: 1 1 calc(50% - 20px); /* Dos columnas en pantallas medianas entre 600 y 900px*/
+    }
+}
+
+@media (min-width: 901px) {
+    article {
+        flex: 1 1 calc(33.33% - 20px); /* Tres columnas en pantallas grandes para mas de 900px*/
+    }
+}
